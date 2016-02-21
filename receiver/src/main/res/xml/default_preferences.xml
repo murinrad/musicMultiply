@@ -1,0 +1,38 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_key_use_timekeeper"
+        android:summary="Enable filtration of data based on their timestamp."
+        android:title="@string/use_timekeeper">
+
+    </CheckBoxPreference>
+    <org.murinrad.android.musicmultiply.receiver.settings.MaxDelayPreference
+        android:defaultValue="50"
+        android:dependency="pref_key_use_timekeeper"
+        android:key="pref_key_time_limit"
+        android:title="@string/time_limit_dragger" />
+
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="pref_key_enable_reset"
+        android:summary="Periodicaly reset the receiver. Use this if you get desynced frequently."
+        android:title="@string/enable_reset">
+
+    </CheckBoxPreference>
+
+    <CheckBoxPreference
+    android:defaultValue="true"
+    android:key="pref_key_defaults_loaded"
+    android:summary="Periodicaly reset the receiver. Use this if you get desynced frequently."
+    android:title="@string/enable_reset">
+
+</CheckBoxPreference>
+
+    <org.murinrad.android.musicmultiply.receiver.settings.ResetMillisPreference
+        android:defaultValue="5"
+        android:dependency="pref_key_enable_reset"
+        android:key="pref_key_reset_millis"
+        android:title="@string/select_reset_period" />
+</PreferenceScreen>

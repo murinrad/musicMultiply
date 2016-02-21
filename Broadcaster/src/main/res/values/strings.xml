@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sandbox</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="close_service">Close service</string>
+    <string name="app_text">The streaming service is now running.</string>
+    <string name="accept_device">Yes, stream to this device</string>
+    <string name="decline_device">No, do not stream to this device</string>
+    <string name="new_device_message">A new device would like to stream music played to this device.</string>
+    <string name="ask_later">No, but ask me later.</string>
+    <string name="device_not_allowed">Device is blocked</string>
+    <string name="device_suspended">Device is temporarily not allowed.</string>
+    <string name="device_allowed">Device is allowed</string>
+    <string name="allow_device">Allow</string>
+    <string name="disallow_device">Block device</string>
+    <string name="device_settings_title">Device permissions</string>
+    <string name="app_title">Music Multiply service</string>
+    <string name="stop_music">Stop playback</string>
+    <string name="not_connected_warning">This app requires a wifi connection.</string>
+    <string name="not_connected_warning_title">No network!</string>
+    <string name="activate_ap">Activate WiFi Hotspot</string>
+    <string name="ignore_wifi_warning">I will connect manualy</string>
+    <string name="starting_wifi">Activating Wifi hotspot</string>
+    <string name="wifi_init_failure">Wifi failed to initialize, please connect your devices manualy</string>
+    <string name="title_activity_player">Player</string>
+
+</resources>

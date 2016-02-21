@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="close_service">Close service</string>
+    <string name="app_text">The streaming service is now running.</string>
+    <string name="accept_device">Yes, stream to this device</string>
+    <string name="decline_device">No, do not stream to this device</string>
+    <string name="new_device_message">A new device would like to stream music played to this device. The device name is %s. Authorise?</string>
+    <string name="ask_later">No, but ask me later.</string>
+    <string name="device_not_allowed">Device is blocked</string>
+    <string name="device_suspended">Device is temporarily not allowed.</string>
+    <string name="device_allowed">Device is allowed</string>
+    <string name="allow_device">Allow</string>
+    <string name="device_settings_title">Device permissions</string>
+    <string name="app_title">Music Multiply service</string>
+    <string name="stop_music">Stop playback</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Broadcaster/Broadcaster.iml" filepath="$PROJECT_DIR$/Broadcaster/Broadcaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/New folder.iml" filepath="$PROJECT_DIR$/New folder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/receiver/receiver.iml" filepath="$PROJECT_DIR$/receiver/receiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timekeeper/timekeeper.iml" filepath="$PROJECT_DIR$/timekeeper/timekeeper.iml" />
+    </modules>
+  </component>
+</project>

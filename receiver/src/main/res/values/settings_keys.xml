@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="setting_use_timekeeper">USE_TIMEKEEPER</string>
+    <string name="setting_max_delay">MAX_DELAY</string>
+</resources>

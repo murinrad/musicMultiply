@@ -1,0 +1,789 @@
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+No configurations
+
+------------------------------------------------------------
+Project :app
+------------------------------------------------------------
+
+_debugApk - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:21.0.3 -> 22.0.0
+|    \--- com.android.support:support-v4:22.0.0
+|         \--- com.android.support:support-annotations:22.0.0
++--- org.fourthline.cling:cling-core:2.0.1
+|    +--- org.seamless:seamless-util:1.1.0
+|    +--- org.seamless:seamless-http:1.1.0
+|    |    \--- org.seamless:seamless-util:1.1.0
+|    \--- org.seamless:seamless-xml:1.1.0
++--- org.fourthline.cling:cling-support:2.0.1
+|    +--- org.fourthline.cling:cling-core:2.0.1 (*)
+|    \--- org.seamless:seamless-swing:1.1.0
++--- org.fourthline.cling:cling-workbench:2.0.1
+|    +--- org.fourthline.cling:cling-support:2.0.1 (*)
+|    +--- org.seamless:seamless-cdi:1.1.0
+|    +--- args4j:args4j:2.0.12
+|    +--- org.jboss.weld.se:weld-se-core:1.1.10.Final
+|    |    +--- org.jboss.weld:weld-spi:1.1.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4
+|    |    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    \--- org.jboss.weld:weld-api:1.1.Final
+|    |    |         \--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4 (*)
+|    |    +--- org.jboss.weld:weld-core:1.1.10.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    |    +--- org.jboss.weld:weld-api:1.1.Final (*)
+|    |    |    +--- org.jboss.weld:weld-spi:1.1.Final (*)
+|    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    +--- org.javassist:javassist:3.14.0-GA
+|    |    |    +--- com.google.guava:guava:11.0.2
+|    |    |    |    \--- com.google.code.findbugs:jsr305:1.3.9
+|    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    +--- org.slf4j:slf4j-ext:1.6.1
+|    |    |    |    +--- org.slf4j:slf4j-api:1.6.1
+|    |    |    |    \--- ch.qos.cal10n:cal10n-api:0.7.4
+|    |    |    +--- ch.qos.cal10n:cal10n-api:0.7.2 -> 0.7.4
+|    |    |    \--- org.slf4j:slf4j-api:1.6.1
+|    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    +--- javax.el:el-api:2.2
+|    |    \--- javax.annotation:jsr250-api:1.0
+|    +--- org.jboss.weld:weld-core:1.1.10.Final (*)
+|    +--- org.javassist:javassist:3.14.0-GA
+|    +--- org.slf4j:slf4j-jdk14:1.6.1
+|    |    \--- org.slf4j:slf4j-api:1.6.1
+|    \--- javax.ejb:ejb-api:3.0
+\--- project :timekeeper
+     +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5
+     |    +--- org.apache.directory.server:apacheds-core:1.5.5
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-search:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5
+     |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15
+     |    |    |    |    |    |    |    |    +--- commons-lang:commons-lang:2.4
+     |    |    |    |    |    |    |    |    +--- commons-collections:commons-collections:3.2.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-asn1:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap-constants:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- antlr:antlr:2.7.7
+     |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- commons-io:commons-io:1.4
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-extras:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-tools:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-utils:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-avl:1.5.5
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-bootstrap-extract:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    +--- bouncycastle:bcprov-jdk15:140
+     |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    +--- org.apache.mina:mina-core:2.0.0-M6
+     |    |    \--- org.slf4j:slf4j-api:1.5.2 -> 1.6.1
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- org.apache.directory.server:apacheds-protocol-ntp:1.5.5
+     |    +--- org.apache.mina:mina-core:2.0.0-M6 (*)
+     |    +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5 (*)
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- commons-net:commons-net:3.3
+     \--- com.android.support:appcompat-v7:22.0.0 (*)
+
+_debugCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:21.0.3 -> 22.0.0
+|    \--- com.android.support:support-v4:22.0.0
+|         \--- com.android.support:support-annotations:22.0.0
++--- org.fourthline.cling:cling-core:2.0.1
+|    +--- org.seamless:seamless-util:1.1.0
+|    +--- org.seamless:seamless-http:1.1.0
+|    |    \--- org.seamless:seamless-util:1.1.0
+|    \--- org.seamless:seamless-xml:1.1.0
++--- org.fourthline.cling:cling-support:2.0.1
+|    +--- org.fourthline.cling:cling-core:2.0.1 (*)
+|    \--- org.seamless:seamless-swing:1.1.0
++--- org.fourthline.cling:cling-workbench:2.0.1
+|    +--- org.fourthline.cling:cling-support:2.0.1 (*)
+|    +--- org.seamless:seamless-cdi:1.1.0
+|    +--- args4j:args4j:2.0.12
+|    +--- org.jboss.weld.se:weld-se-core:1.1.10.Final
+|    |    +--- org.jboss.weld:weld-spi:1.1.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4
+|    |    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    \--- org.jboss.weld:weld-api:1.1.Final
+|    |    |         \--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4 (*)
+|    |    +--- org.jboss.weld:weld-core:1.1.10.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    |    +--- org.jboss.weld:weld-api:1.1.Final (*)
+|    |    |    +--- org.jboss.weld:weld-spi:1.1.Final (*)
+|    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    +--- org.javassist:javassist:3.14.0-GA
+|    |    |    +--- com.google.guava:guava:11.0.2
+|    |    |    |    \--- com.google.code.findbugs:jsr305:1.3.9
+|    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    +--- org.slf4j:slf4j-ext:1.6.1
+|    |    |    |    +--- org.slf4j:slf4j-api:1.6.1
+|    |    |    |    \--- ch.qos.cal10n:cal10n-api:0.7.4
+|    |    |    +--- ch.qos.cal10n:cal10n-api:0.7.2 -> 0.7.4
+|    |    |    \--- org.slf4j:slf4j-api:1.6.1
+|    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    +--- javax.el:el-api:2.2
+|    |    \--- javax.annotation:jsr250-api:1.0
+|    +--- org.jboss.weld:weld-core:1.1.10.Final (*)
+|    +--- org.javassist:javassist:3.14.0-GA
+|    +--- org.slf4j:slf4j-jdk14:1.6.1
+|    |    \--- org.slf4j:slf4j-api:1.6.1
+|    \--- javax.ejb:ejb-api:3.0
+\--- project :timekeeper
+     +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5
+     |    +--- org.apache.directory.server:apacheds-core:1.5.5
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-search:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5
+     |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15
+     |    |    |    |    |    |    |    |    +--- commons-lang:commons-lang:2.4
+     |    |    |    |    |    |    |    |    +--- commons-collections:commons-collections:3.2.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-asn1:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap-constants:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- antlr:antlr:2.7.7
+     |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- commons-io:commons-io:1.4
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-extras:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-tools:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-utils:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-avl:1.5.5
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-bootstrap-extract:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    +--- bouncycastle:bcprov-jdk15:140
+     |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    +--- org.apache.mina:mina-core:2.0.0-M6
+     |    |    \--- org.slf4j:slf4j-api:1.5.2 -> 1.6.1
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- org.apache.directory.server:apacheds-protocol-ntp:1.5.5
+     |    +--- org.apache.mina:mina-core:2.0.0-M6 (*)
+     |    +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5 (*)
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- commons-net:commons-net:3.3
+     \--- com.android.support:appcompat-v7:22.0.0 (*)
+
+_debugTestApk - ## Internal use, do not manually configure ##
+No dependencies
+
+_debugTestCompile - ## Internal use, do not manually configure ##
+No dependencies
+
+_releaseApk - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:21.0.3 -> 22.0.0
+|    \--- com.android.support:support-v4:22.0.0
+|         \--- com.android.support:support-annotations:22.0.0
++--- org.fourthline.cling:cling-core:2.0.1
+|    +--- org.seamless:seamless-util:1.1.0
+|    +--- org.seamless:seamless-http:1.1.0
+|    |    \--- org.seamless:seamless-util:1.1.0
+|    \--- org.seamless:seamless-xml:1.1.0
++--- org.fourthline.cling:cling-support:2.0.1
+|    +--- org.fourthline.cling:cling-core:2.0.1 (*)
+|    \--- org.seamless:seamless-swing:1.1.0
++--- org.fourthline.cling:cling-workbench:2.0.1
+|    +--- org.fourthline.cling:cling-support:2.0.1 (*)
+|    +--- org.seamless:seamless-cdi:1.1.0
+|    +--- args4j:args4j:2.0.12
+|    +--- org.jboss.weld.se:weld-se-core:1.1.10.Final
+|    |    +--- org.jboss.weld:weld-spi:1.1.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4
+|    |    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    \--- org.jboss.weld:weld-api:1.1.Final
+|    |    |         \--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4 (*)
+|    |    +--- org.jboss.weld:weld-core:1.1.10.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    |    +--- org.jboss.weld:weld-api:1.1.Final (*)
+|    |    |    +--- org.jboss.weld:weld-spi:1.1.Final (*)
+|    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    +--- org.javassist:javassist:3.14.0-GA
+|    |    |    +--- com.google.guava:guava:11.0.2
+|    |    |    |    \--- com.google.code.findbugs:jsr305:1.3.9
+|    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    +--- org.slf4j:slf4j-ext:1.6.1
+|    |    |    |    +--- org.slf4j:slf4j-api:1.6.1
+|    |    |    |    \--- ch.qos.cal10n:cal10n-api:0.7.4
+|    |    |    +--- ch.qos.cal10n:cal10n-api:0.7.2 -> 0.7.4
+|    |    |    \--- org.slf4j:slf4j-api:1.6.1
+|    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    +--- javax.el:el-api:2.2
+|    |    \--- javax.annotation:jsr250-api:1.0
+|    +--- org.jboss.weld:weld-core:1.1.10.Final (*)
+|    +--- org.javassist:javassist:3.14.0-GA
+|    +--- org.slf4j:slf4j-jdk14:1.6.1
+|    |    \--- org.slf4j:slf4j-api:1.6.1
+|    \--- javax.ejb:ejb-api:3.0
+\--- project :timekeeper
+     +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5
+     |    +--- org.apache.directory.server:apacheds-core:1.5.5
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-search:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5
+     |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15
+     |    |    |    |    |    |    |    |    +--- commons-lang:commons-lang:2.4
+     |    |    |    |    |    |    |    |    +--- commons-collections:commons-collections:3.2.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-asn1:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap-constants:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- antlr:antlr:2.7.7
+     |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- commons-io:commons-io:1.4
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-extras:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-tools:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-utils:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-avl:1.5.5
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-bootstrap-extract:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    +--- bouncycastle:bcprov-jdk15:140
+     |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    +--- org.apache.mina:mina-core:2.0.0-M6
+     |    |    \--- org.slf4j:slf4j-api:1.5.2 -> 1.6.1
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- org.apache.directory.server:apacheds-protocol-ntp:1.5.5
+     |    +--- org.apache.mina:mina-core:2.0.0-M6 (*)
+     |    +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5 (*)
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- commons-net:commons-net:3.3
+     \--- com.android.support:appcompat-v7:22.0.0 (*)
+
+_releaseCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:21.0.3 -> 22.0.0
+|    \--- com.android.support:support-v4:22.0.0
+|         \--- com.android.support:support-annotations:22.0.0
++--- org.fourthline.cling:cling-core:2.0.1
+|    +--- org.seamless:seamless-util:1.1.0
+|    +--- org.seamless:seamless-http:1.1.0
+|    |    \--- org.seamless:seamless-util:1.1.0
+|    \--- org.seamless:seamless-xml:1.1.0
++--- org.fourthline.cling:cling-support:2.0.1
+|    +--- org.fourthline.cling:cling-core:2.0.1 (*)
+|    \--- org.seamless:seamless-swing:1.1.0
++--- org.fourthline.cling:cling-workbench:2.0.1
+|    +--- org.fourthline.cling:cling-support:2.0.1 (*)
+|    +--- org.seamless:seamless-cdi:1.1.0
+|    +--- args4j:args4j:2.0.12
+|    +--- org.jboss.weld.se:weld-se-core:1.1.10.Final
+|    |    +--- org.jboss.weld:weld-spi:1.1.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4
+|    |    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    \--- org.jboss.weld:weld-api:1.1.Final
+|    |    |         \--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4 (*)
+|    |    +--- org.jboss.weld:weld-core:1.1.10.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    |    +--- org.jboss.weld:weld-api:1.1.Final (*)
+|    |    |    +--- org.jboss.weld:weld-spi:1.1.Final (*)
+|    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    +--- org.javassist:javassist:3.14.0-GA
+|    |    |    +--- com.google.guava:guava:11.0.2
+|    |    |    |    \--- com.google.code.findbugs:jsr305:1.3.9
+|    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    +--- org.slf4j:slf4j-ext:1.6.1
+|    |    |    |    +--- org.slf4j:slf4j-api:1.6.1
+|    |    |    |    \--- ch.qos.cal10n:cal10n-api:0.7.4
+|    |    |    +--- ch.qos.cal10n:cal10n-api:0.7.2 -> 0.7.4
+|    |    |    \--- org.slf4j:slf4j-api:1.6.1
+|    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    +--- javax.el:el-api:2.2
+|    |    \--- javax.annotation:jsr250-api:1.0
+|    +--- org.jboss.weld:weld-core:1.1.10.Final (*)
+|    +--- org.javassist:javassist:3.14.0-GA
+|    +--- org.slf4j:slf4j-jdk14:1.6.1
+|    |    \--- org.slf4j:slf4j-api:1.6.1
+|    \--- javax.ejb:ejb-api:3.0
+\--- project :timekeeper
+     +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5
+     |    +--- org.apache.directory.server:apacheds-core:1.5.5
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-search:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5
+     |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15
+     |    |    |    |    |    |    |    |    +--- commons-lang:commons-lang:2.4
+     |    |    |    |    |    |    |    |    +--- commons-collections:commons-collections:3.2.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-asn1:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap-constants:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- antlr:antlr:2.7.7
+     |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- commons-io:commons-io:1.4
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-extras:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-tools:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-utils:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-avl:1.5.5
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-bootstrap-extract:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    +--- bouncycastle:bcprov-jdk15:140
+     |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    +--- org.apache.mina:mina-core:2.0.0-M6
+     |    |    \--- org.slf4j:slf4j-api:1.5.2 -> 1.6.1
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- org.apache.directory.server:apacheds-protocol-ntp:1.5.5
+     |    +--- org.apache.mina:mina-core:2.0.0-M6 (*)
+     |    +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5 (*)
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- commons-net:commons-net:3.3
+     \--- com.android.support:appcompat-v7:22.0.0 (*)
+
+androidJacocoAgent - The Jacoco agent to use to get coverage data.
+\--- org.jacoco:org.jacoco.agent:0.7.1.201405082137
+
+androidJacocoAnt - The Jacoco ant tasks to use to get execute Gradle tasks.
+\--- org.jacoco:org.jacoco.ant:0.7.1.201405082137
+     +--- org.jacoco:org.jacoco.core:0.7.1.201405082137
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     +--- org.jacoco:org.jacoco.report:0.7.1.201405082137
+     |    +--- org.jacoco:org.jacoco.core:0.7.1.201405082137 (*)
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     \--- org.jacoco:org.jacoco.agent:0.7.1.201405082137
+
+androidTestApk - Classpath packaged with the compiled 'androidTest' classes.
+No dependencies
+
+androidTestCompile - Classpath for compiling the androidTest sources.
+No dependencies
+
+androidTestProvided - Classpath for only compiling the androidTest sources.
+No dependencies
+
+androidTestWearApp - Link to a wear app to embed for object 'androidTest'.
+No dependencies
+
+apk - Classpath packaged with the compiled 'main' classes.
+No dependencies
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+compile - Classpath for compiling the main sources.
++--- com.android.support:appcompat-v7:21.0.3 -> 22.0.0
+|    \--- com.android.support:support-v4:22.0.0
+|         \--- com.android.support:support-annotations:22.0.0
++--- org.fourthline.cling:cling-core:2.0.1
+|    +--- org.seamless:seamless-util:1.1.0
+|    +--- org.seamless:seamless-http:1.1.0
+|    |    \--- org.seamless:seamless-util:1.1.0
+|    \--- org.seamless:seamless-xml:1.1.0
++--- org.fourthline.cling:cling-support:2.0.1
+|    +--- org.fourthline.cling:cling-core:2.0.1 (*)
+|    \--- org.seamless:seamless-swing:1.1.0
++--- org.fourthline.cling:cling-workbench:2.0.1
+|    +--- org.fourthline.cling:cling-support:2.0.1 (*)
+|    +--- org.seamless:seamless-cdi:1.1.0
+|    +--- args4j:args4j:2.0.12
+|    +--- org.jboss.weld.se:weld-se-core:1.1.10.Final
+|    |    +--- org.jboss.weld:weld-spi:1.1.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4
+|    |    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    |    \--- javax.inject:javax.inject:1
+|    |    |    \--- org.jboss.weld:weld-api:1.1.Final
+|    |    |         \--- javax.enterprise:cdi-api:1.0-SP3 -> 1.0-SP4 (*)
+|    |    +--- org.jboss.weld:weld-core:1.1.10.Final
+|    |    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    |    +--- org.jboss.weld:weld-api:1.1.Final (*)
+|    |    |    +--- org.jboss.weld:weld-spi:1.1.Final (*)
+|    |    |    +--- javax.annotation:jsr250-api:1.0
+|    |    |    +--- org.javassist:javassist:3.14.0-GA
+|    |    |    +--- com.google.guava:guava:11.0.2
+|    |    |    |    \--- com.google.code.findbugs:jsr305:1.3.9
+|    |    |    +--- org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1
+|    |    |    +--- org.slf4j:slf4j-ext:1.6.1
+|    |    |    |    +--- org.slf4j:slf4j-api:1.6.1
+|    |    |    |    \--- ch.qos.cal10n:cal10n-api:0.7.4
+|    |    |    +--- ch.qos.cal10n:cal10n-api:0.7.2 -> 0.7.4
+|    |    |    \--- org.slf4j:slf4j-api:1.6.1
+|    |    +--- javax.enterprise:cdi-api:1.0-SP4 (*)
+|    |    +--- javax.el:el-api:2.2
+|    |    \--- javax.annotation:jsr250-api:1.0
+|    +--- org.jboss.weld:weld-core:1.1.10.Final (*)
+|    +--- org.javassist:javassist:3.14.0-GA
+|    +--- org.slf4j:slf4j-jdk14:1.6.1
+|    |    \--- org.slf4j:slf4j-api:1.6.1
+|    \--- javax.ejb:ejb-api:3.0
+\--- project :timekeeper
+     +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5
+     |    +--- org.apache.directory.server:apacheds-core:1.5.5
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-search:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5
+     |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15
+     |    |    |    |    |    |    |    |    +--- commons-lang:commons-lang:2.4
+     |    |    |    |    |    |    |    |    +--- commons-collections:commons-collections:3.2.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-asn1:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap-constants:0.9.15
+     |    |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    |    +--- antlr:antlr:2.7.7
+     |    |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5
+     |    |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- commons-io:commons-io:1.4
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-extras:1.5.5
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-tools:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-schema-bootstrap:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-utils:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-shared:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-constants:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-entry:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-core-avl:1.5.5
+     |    |    |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.server:apacheds-schema-registries:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.server:apacheds-xdbm-base:1.5.5 (*)
+     |    |    +--- org.apache.directory.server:apacheds-bootstrap-extract:1.5.5
+     |    |    |    +--- org.apache.directory.server:apacheds-jdbm-store:1.5.5 (*)
+     |    |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    |    +--- org.apache.directory.shared:shared-cursor:0.9.15 (*)
+     |    |    +--- bouncycastle:bcprov-jdk15:140
+     |    |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     |    +--- org.apache.mina:mina-core:2.0.0-M6
+     |    |    \--- org.slf4j:slf4j-api:1.5.2 -> 1.6.1
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- org.apache.directory.server:apacheds-protocol-ntp:1.5.5
+     |    +--- org.apache.mina:mina-core:2.0.0-M6 (*)
+     |    +--- org.apache.directory.server:apacheds-protocol-shared:1.5.5 (*)
+     |    +--- org.apache.directory.shared:shared-ldap:0.9.15 (*)
+     |    \--- org.slf4j:slf4j-api:1.5.6 -> 1.6.1
+     +--- commons-net:commons-net:3.3
+     \--- com.android.support:appcompat-v7:22.0.0 (*)
+
+debugApk - Classpath packaged with the compiled 'debug' classes.
+No dependencies
+
+debugCompile - Classpath for compiling the debug sources.
+No dependencies
+
+debugProvided - Classpath for only compiling the debug sources.
+No dependencies
+
+debugWearApp - Link to a wear app to embed for object 'debug'.
+No dependencies
+
+default - Configuration for default artifacts.
+No dependencies
+
+provided - Classpath for only compiling the main sources.
+No dependencies
+
+releaseApk - Classpath packaged with the compiled 'release' classes.
+No dependencies
+
+releaseCompile - Classpath for compiling the release sources.
+No dependencies
+
+releaseProvided - Classpath for only compiling the release sources.
+No dependencies
+
+releaseWearApp - Link to a wear app to embed for object 'release'.
+No dependencies
+
+wearApp - Link to a wear app to embed for object 'main'.
+No dependencies
