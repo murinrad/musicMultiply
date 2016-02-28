@@ -149,11 +149,7 @@ public class MusicMultiplyServerService extends Service {
         try {
             if (activeDecoder != null) {
                 qosSubsystem.removeHandler(activeDecoder);
-                if (activeDecoder.isPaused()) {
-                    activeDecoder.performPause();
-                } else {
-                    activeDecoder.stop();
-                }
+                activeDecoder.stop();
             }
             activeDecoder = new MP3ToPCMSender(stringExtra,this);
             qosSubsystem.addHandler(activeDecoder);
