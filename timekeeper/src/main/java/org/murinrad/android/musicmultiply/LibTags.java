@@ -1,7 +1,7 @@
 package org.murinrad.android.musicmultiply;
 
 /**
- * Created by Rado on 3.1.2015.
+ * Created by Radovan Murin on 3.1.2015.
  */
 public class LibTags {
 

@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import java.util.UUID;
 
 /**
- * Created by Rado on 11.4.2015.
+ * Created by Radovan Murin on 11.4.2015.
  */
 public class ClientDeviceFactory {
     private static final String UUID_STORE = "UUID_STORE";

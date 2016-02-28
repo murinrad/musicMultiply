@@ -19,7 +19,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Created by Rado on 6.4.2015.
+ * Created by Radovan Murin on 6.4.2015.
  */
 public abstract class IDeviceAdvertListener implements IDeviceManager, SecurityProvider.ISecurityProviderListener {
 

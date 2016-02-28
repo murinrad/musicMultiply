@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * Created by Rado on 20.4.2015.
+ * Created by Radovan Murin on 20.4.2015.
  */
 public class NotificationProvider {
     protected static Random r = new Random();

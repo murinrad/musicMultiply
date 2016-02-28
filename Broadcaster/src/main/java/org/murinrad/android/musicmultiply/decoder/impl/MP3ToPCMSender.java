@@ -1,12 +1,15 @@
 package org.murinrad.android.musicmultiply.decoder.impl;
 
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
 import android.media.MediaCodec;
 import android.media.MediaExtractor;
 import android.media.MediaFormat;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
@@ -26,7 +29,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
- * Created by Rado on 8.3.2015.
+ * Created by Radovan Murin on 8.3.2015.
  */
 public class MP3ToPCMSender extends SoundSystemToPCMDecoder implements QosMessageHandler {
     private static final String LOG_TAG = "Sandbox";
@@ -38,14 +41,24 @@ public class MP3ToPCMSender extends SoundSystemToPCMDecoder implements QosMessag
     BufferedSender buffer;
     private int currentDelay = 0;
     private int delayThreshHold = 25;
+    private Context context;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
-    public MP3ToPCMSender(String source) throws IOException {
+    public MP3ToPCMSender(String source,Context ctx) throws IOException {
         this.sourceURI = source;
+        this.context = ctx;
         extractor = new MediaExtractor();
-        extractor.setDataSource(source);
+        if(source.startsWith("content://")) {
+
+            AssetFileDescriptor fd = ctx.getContentResolver().openAssetFileDescriptor(Uri.parse(source),"r");
+            extractor.setDataSource(fd.getFileDescriptor());
+        } else {
+            extractor.setDataSource(source);
+        }
         buffer = new BufferedSender(512);
     }
+
+
 
     public void play() {
         DecodeOperation decoder = new DecodeOperation();
@@ -65,6 +78,15 @@ public class MP3ToPCMSender extends SoundSystemToPCMDecoder implements QosMessag
         notifyOnStop();
 
 
+    }
+
+    @Override
+    public void pause() {
+        if(!isPaused()) {
+            audioTrack.pause();
+        } else {
+            audioTrack.play();
+        }
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -153,7 +175,7 @@ public class MP3ToPCMSender extends SoundSystemToPCMDecoder implements QosMessag
                     sawOutputEOS = true;
                 }
                 while (isPaused && !doStop) {
-                    // a very crude way to implement a pause button
+                    // a very crude way to implement a performPause button
                 }
             } else if (res == MediaCodec.INFO_OUTPUT_BUFFERS_CHANGED) {
                 codecOutputBuffers = mediaCodec.getOutputBuffers();
@@ -263,7 +285,7 @@ public class MP3ToPCMSender extends SoundSystemToPCMDecoder implements QosMessag
 
                     } else if (dataIn.get() == 0) {
                         active = false;
-                        Log.i(MainActivity.APP_TAG, "Buffering...");
+                        //Log.i(MainActivity.APP_TAG, "Buffering...");
                     }
                 }
             } catch (InterruptedException ex) {

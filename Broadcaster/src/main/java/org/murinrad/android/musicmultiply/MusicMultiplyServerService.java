@@ -4,9 +4,13 @@ import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.media.MediaMetadata;
+import android.media.MediaMetadataRetriever;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import net.murinrad.android.timekeeper.ITimeKeeperServer;
 
@@ -25,7 +29,9 @@ import org.fourthline.cling.model.meta.ModelDetails;
 import org.fourthline.cling.model.types.DeviceType;
 import org.fourthline.cling.model.types.UDADeviceType;
 import org.fourthline.cling.model.types.UDN;
+import org.murinrad.android.musicmultiply.decoder.MusicData;
 import org.murinrad.android.musicmultiply.decoder.SoundSystemToPCMDecoder;
+import org.murinrad.android.musicmultiply.decoder.events.MusicPlaybackEventDispatcher;
 import org.murinrad.android.musicmultiply.decoder.impl.MP3ToPCMSender;
 import org.murinrad.android.musicmultiply.devices.management.DeviceAdvertListener;
 import org.murinrad.android.musicmultiply.devices.management.IDeviceAdvertListener;
@@ -38,8 +44,14 @@ import org.murinrad.android.musicmultiply.upnp.AVTransportService;
 import org.murinrad.android.musicmultiply.upnp.ConnectionManager;
 import org.murinrad.android.musicmultiply.upnp.RenderingControl;
 
+import java.io.FileDescriptor;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.UUID;
+
+import sandbox.murinrad.org.sandbox.R;
 
 public class MusicMultiplyServerService extends Service {
 
@@ -96,6 +108,8 @@ public class MusicMultiplyServerService extends Service {
         }
     };
 
+    private Queue<String> pastSongs = new LinkedList<>();
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         int retVal = START_STICKY;
@@ -104,12 +118,14 @@ public class MusicMultiplyServerService extends Service {
             if (action == null) action = "";
             switch (action) {
                 case INTENT_NEXT:
+                    pastSongs.add(intent.getStringExtra(INTENT_URI_TAG));
                     playSong(intent.getStringExtra(INTENT_URI_TAG));
                     break;
                 case INTENT_PAUSE:
                     pause();
                     break;
                 case INTENT_PLAY:
+                    pastSongs.add(intent.getStringExtra(INTENT_URI_TAG));
                     playSong(intent.getStringExtra(INTENT_URI_TAG));
                     break;
                 case INTENT_PREVIOUS:
@@ -134,15 +150,28 @@ public class MusicMultiplyServerService extends Service {
             if (activeDecoder != null) {
                 qosSubsystem.removeHandler(activeDecoder);
                 if (activeDecoder.isPaused()) {
-                    activeDecoder.pause();
+                    activeDecoder.performPause();
                 } else {
                     activeDecoder.stop();
                 }
             }
-            activeDecoder = new MP3ToPCMSender(stringExtra);
+            activeDecoder = new MP3ToPCMSender(stringExtra,this);
             qosSubsystem.addHandler(activeDecoder);
             activeDecoder.registerOnDataSentListener(packetLauncher);
             activeDecoder.play();
+            MediaMetadataRetriever metadataRetriever = new MediaMetadataRetriever();
+            metadataRetriever.setDataSource(getContentResolver()
+                    .openAssetFileDescriptor(Uri.parse(stringExtra),"r")
+                    .getFileDescriptor());
+            MusicData.Builder blrd = new MusicData.Builder().withName(metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE))
+                    .withArtist(metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ALBUMARTIST));
+            try {
+                blrd.withLength(Integer.parseInt(metadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)));
+            } catch (NumberFormatException ex) {
+                Log.w(MainActivity.APP_TAG,"Could not parse song length",ex);
+            }
+            MusicPlaybackEventDispatcher.notifyMusicDatachange(blrd.build());
+
         } catch (IOException e) {
             Log.e(MainActivity.APP_TAG, "Could not initialize MP3Decoder", e);
         }
@@ -150,7 +179,7 @@ public class MusicMultiplyServerService extends Service {
 
     private void pause() {
         if (activeDecoder != null) {
-            activeDecoder.pause();
+            activeDecoder.performPause();
         }
 
     }
@@ -166,6 +195,12 @@ public class MusicMultiplyServerService extends Service {
     }
 
     private void previous() {
+        if(!pastSongs.isEmpty()) {
+            String uri = pastSongs.remove();
+            playSong(uri);
+        } else {
+            Toast.makeText(this,getText(R.string.no_more_previous),Toast.LENGTH_LONG).show();
+        }
 
     }
 

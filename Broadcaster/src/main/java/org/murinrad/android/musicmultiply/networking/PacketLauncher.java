@@ -93,7 +93,7 @@ public class PacketLauncher implements Runnable, OnDataSentListener, IDeviceMana
                     sentDataToDevice(data, addr.getAddress());
                 }
                 lastPacketTimeStamp = System.currentTimeMillis();
-                Log.v("Packet Launcher", "Packet sent!");
+                //Log.v("Packet Launcher", "Packet sent!");
                 cache.put(PacketConstructor.getPacketID(data), data);
                 Thread.sleep(state.delay);
             } catch (InterruptedException e) {
@@ -132,13 +132,13 @@ public class PacketLauncher implements Runnable, OnDataSentListener, IDeviceMana
     }
 
     private void unlockPerformance() {
-        if (wakeLock != null) {
+        if (wakeLock != null && wakeLock.isHeld()) {
             wakeLock.release();
         }
-        if (multicastLock != null) {
+        if (multicastLock != null && multicastLock.isHeld()) {
             multicastLock.release();
         }
-        if (wifiLock != null) {
+        if (wifiLock != null && wifiLock.isHeld()) {
             wifiLock.release();
         }
         Log.i(MainActivity.APP_TAG, "Performance locks released");

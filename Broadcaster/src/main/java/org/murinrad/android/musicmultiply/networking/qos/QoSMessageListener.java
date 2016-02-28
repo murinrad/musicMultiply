@@ -19,7 +19,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Rado on 19.4.2015.
+ * Created by Radovan Murin on 19.4.2015.
  */
 public class QoSMessageListener implements Runnable, IDeviceManager {
 

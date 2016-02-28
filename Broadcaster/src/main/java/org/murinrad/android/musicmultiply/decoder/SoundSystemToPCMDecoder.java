@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Rado on 8.3.2015.
+ * Created by Radovan Murin on 8.3.2015.
  */
 public abstract class SoundSystemToPCMDecoder implements QosMessageHandler {
     protected Set<OnDataSentListener> onDataSendListeners = new HashSet<>();
@@ -21,6 +21,8 @@ public abstract class SoundSystemToPCMDecoder implements QosMessageHandler {
     public abstract void play();
 
     public abstract void stop();
+
+    public abstract void pause();
 
     public void registerOnDataSentListener(OnDataSentListener l) {
         onDataSendListeners.add(l);
@@ -42,22 +44,26 @@ public abstract class SoundSystemToPCMDecoder implements QosMessageHandler {
 
     protected void notifyOnStart() {
         MusicPlaybackEventDispatcher.notifyMusicStart();
+        if(isPaused) {
+            pause();
+        }
 
     }
 
     protected void notifyOnPause() {
         MusicPlaybackEventDispatcher.notifyMusicPause();
+        pause();
 
     }
 
 
-    public void pause() {
-
-        if (isPaused) {
+    public void performPause() {
+        if (!isPaused) {
             notifyOnPause();
         } else {
             notifyOnStart();
         }
+        isPaused = !isPaused;
     }
 
 

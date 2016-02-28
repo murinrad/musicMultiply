@@ -5,7 +5,7 @@ import org.murinrad.android.musicmultiply.receiver.utils.PriorityCircularBlockin
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Rado on 10.5.2015.
+ * Created by Radovan Murin on 10.5.2015.
  */
 public class ReceiverCache extends PriorityCircularBlockingQueue<ComparableTuple> {
 

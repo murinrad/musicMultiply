@@ -3,7 +3,7 @@ package org.murinrad.android.musicmultiply.networking.qos;
 import java.net.InetAddress;
 
 /**
- * Created by Rado on 19.4.2015.
+ * Created by Radovan Murin on 19.4.2015.
  */
 public interface QosMessageHandler {
 

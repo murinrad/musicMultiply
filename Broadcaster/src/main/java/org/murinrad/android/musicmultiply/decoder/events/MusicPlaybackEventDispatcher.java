@@ -1,12 +1,17 @@
 package org.murinrad.android.musicmultiply.decoder.events;
 
+import android.util.Log;
+
+import org.murinrad.android.musicmultiply.MainActivity;
+import org.murinrad.android.musicmultiply.decoder.MusicData;
+
 import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Created by Rado on 14.6.2015.
+ * Created by Radovan Murin on 14.6.2015.
  */
 public final class MusicPlaybackEventDispatcher {
 
@@ -21,6 +26,7 @@ public final class MusicPlaybackEventDispatcher {
 
     public static void deregisterListener(OnMusicPlaybackListener listener) {
         Iterator<WeakReference<OnMusicPlaybackListener>> iterator = listeners.iterator();
+        Log.i(MainActivity.APP_TAG,"Deregistering Music even dispatcher.");
         while (iterator.hasNext()) {
             WeakReference<OnMusicPlaybackListener> reference = iterator.next();
             if (reference.get() == null) {
@@ -36,6 +42,7 @@ public final class MusicPlaybackEventDispatcher {
 
     public static void notifyMusicStart() {
         Iterator<WeakReference<OnMusicPlaybackListener>> iterator = listeners.iterator();
+        Log.i(MainActivity.APP_TAG,"notifyMusicStart");
         while (iterator.hasNext()) {
             WeakReference<OnMusicPlaybackListener> reference = iterator.next();
             if (reference.get() == null) {
@@ -49,6 +56,7 @@ public final class MusicPlaybackEventDispatcher {
 
     public static void notifyMusicStop() {
         Iterator<WeakReference<OnMusicPlaybackListener>> iterator = listeners.iterator();
+        Log.i(MainActivity.APP_TAG,"notifyMusicStop");
         while (iterator.hasNext()) {
             WeakReference<OnMusicPlaybackListener> reference = iterator.next();
             if (reference.get() == null) {
@@ -62,6 +70,7 @@ public final class MusicPlaybackEventDispatcher {
 
     public static void notifyMusicPause() {
         Iterator<WeakReference<OnMusicPlaybackListener>> iterator = listeners.iterator();
+        Log.i(MainActivity.APP_TAG,"notifyMusicPause");
         while (iterator.hasNext()) {
             WeakReference<OnMusicPlaybackListener> reference = iterator.next();
             if (reference.get() == null) {
@@ -69,6 +78,20 @@ public final class MusicPlaybackEventDispatcher {
                 continue;
             }
             reference.get().onPause();
+
+        }
+    }
+
+    public static void notifyMusicDatachange(MusicData data) {
+        Iterator<WeakReference<OnMusicPlaybackListener>> iterator = listeners.iterator();
+        Log.i(MainActivity.APP_TAG,"notifyMusicDatachange");
+        while (iterator.hasNext()) {
+            WeakReference<OnMusicPlaybackListener> reference = iterator.next();
+            if (reference.get() == null) {
+                iterator.remove();
+                continue;
+            }
+            reference.get().onMusicInfoChange(data);
 
         }
     }

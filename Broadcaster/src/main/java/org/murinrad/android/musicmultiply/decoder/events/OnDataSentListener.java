@@ -1,7 +1,7 @@
 package org.murinrad.android.musicmultiply.decoder.events;
 
 /**
- * Created by Rado on 8.3.2015.
+ * Created by Radovan Murin on 8.3.2015.
  */
 public interface OnDataSentListener {
 

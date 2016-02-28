@@ -16,7 +16,7 @@ import java.util.Set;
 import sandbox.murinrad.org.sandbox.R;
 
 /**
- * Created by Rado on 19.4.2015.
+ * Created by Radovan Murin on 19.4.2015.
  */
 public class SecurityProvider {
 

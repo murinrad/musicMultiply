@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import java.util.UUID;
 
 /**
- * Created by Rado on 6.4.2015.
+ * Created by Radovan Murin on 6.4.2015.
  */
 public class UUIDUtility {
     public static final String SETTINGS_PREF_TAG = "MUSIC_MULTIPLY_PREFS";

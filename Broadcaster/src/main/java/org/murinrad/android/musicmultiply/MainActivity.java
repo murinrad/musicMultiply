@@ -6,11 +6,20 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
+import org.apache.mina.proxy.utils.StringUtilities;
+import org.eclipse.jetty.util.StringUtil;
+import org.murinrad.android.musicmultiply.decoder.MusicData;
+import org.murinrad.android.musicmultiply.decoder.events.MusicPlaybackEventDispatcher;
+import org.murinrad.android.musicmultiply.decoder.events.OnMusicPlaybackListener;
 import org.murinrad.android.musicmultiply.networking.wifi.WifiUtility;
 import org.murinrad.android.musicmultiply.org.murinrad.util.GenericCallback;
 
@@ -19,19 +28,37 @@ import sandbox.murinrad.org.sandbox.R;
 
 public class MainActivity extends Activity {
     public static final String APP_TAG = "MusicMultiply SERVER";
+    private static final int SONG_PICKER = 1;
     public static int AUDIO_PORT = 15145;
     public static String channel = "224.0.2.0";
-    Button closeButton;
+    Button closeButton, selectSongButton;
+    ImageButton playButton, prevButton, nextButton;
+    PlaybackListener playbackListener;
+    String lastURI = null;
+    TextView songName,songDuration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_player);
+        selectSongButton = (Button) findViewById(R.id.selectSong);
         closeButton = (Button) findViewById(R.id.closeButton);
+        playButton = (ImageButton) findViewById(R.id.playButton);
+        nextButton = (ImageButton) findViewById(R.id.nextBTN);
+        prevButton = (ImageButton) findViewById(R.id.previousBTN);
+        songName = (TextView) findViewById(R.id.songName);
+
+        initializeButtonActions();
+
+        performInitializationChecks();
+
+
+    }
+
+
+
+    private void initializeButtonActions() {
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,9 +68,49 @@ public class MainActivity extends Activity {
                 //  finish();
             }
         });
-        performInitializationChecks();
+        selectSongButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchMusicSelector();
+            }
+        });
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (lastURI == null || "".equals(lastURI)) {
+                    launchMusicSelector();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), MusicMultiplyServerService.class);
+                    intent.setAction(MusicMultiplyServerService.INTENT_PAUSE);
+                    startService(intent);
+                }
+            }
+        });
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), MusicMultiplyServerService.class);
+                intent.setAction(MusicMultiplyServerService.INTENT_PREVIOUS);
+                startService(intent);
+            }
+        });
 
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        MusicPlaybackEventDispatcher.deregisterListener(playbackListener);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        playbackListener = new PlaybackListener();
+        MusicPlaybackEventDispatcher.registerListener(playbackListener);
     }
 
     private void performInitializationChecks() {
@@ -140,5 +207,81 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case SONG_PICKER:
+                if (resultCode == RESULT_OK) {
+                    parsePickerResult(data);
+                }
+                break;
+            default:
+                Log.i(APP_TAG, "Main activity received result with an unknown request code");
+
+        }
+    }
+
+    private void parsePickerResult(Intent data) {
+        String uri = data.getData().toString();
+        Log.i(APP_TAG, "Main activity received new music URI : " + uri);
+        this.lastURI = uri;
+        startSong(uri);
+    }
+
+    private void startSong(String uri) {
+        Intent intent = new Intent(this, MusicMultiplyServerService.class);
+        intent.setAction(MusicMultiplyServerService.INTENT_PLAY);
+        intent.putExtra(MusicMultiplyServerService.INTENT_URI_TAG, uri);
+        startService(intent);
+    }
+
+    private void launchMusicSelector() {
+        Intent i = new Intent();
+        i.setAction(Intent.ACTION_PICK);
+        i.setType(MediaStore.Audio.Media.CONTENT_TYPE);
+        i.setData(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(Intent.createChooser(i, "Song"), SONG_PICKER);
+    }
+
+    private class PlaybackListener implements OnMusicPlaybackListener {
+
+        @Override
+        public void onStop() {
+            if (playButton != null) {
+                playButton.setImageResource((android.R.drawable.ic_media_play));
+
+            }
+
+
+        }
+
+        @Override
+        public void onPause() {
+            if (playButton != null) {
+                playButton.setImageResource(android.R.drawable.ic_media_play);
+            }
+
+        }
+
+        @Override
+        public void onStart() {
+            if (playButton != null) {
+                playButton.setImageResource(android.R.drawable.ic_media_pause);
+            }
+
+        }
+
+        @Override
+        public void onMusicInfoChange(MusicData data) {
+            if(songName!=null) {
+                songName.setText(data.getSongName());
+
+
+
+            }
+
+        }
     }
 }

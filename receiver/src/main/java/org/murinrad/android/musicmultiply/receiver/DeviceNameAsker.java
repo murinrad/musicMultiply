@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 /**
- * Created by Rado on 11.4.2015.
+ * Created by Radovan Murin on 11.4.2015.
  */
 public class DeviceNameAsker extends LinearLayout {
     EditText text;

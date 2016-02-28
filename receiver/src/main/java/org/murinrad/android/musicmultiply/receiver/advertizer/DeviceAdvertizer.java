@@ -13,7 +13,7 @@ import java.net.SocketException;
 import java.util.TimerTask;
 
 /**
- * Created by Rado on 11.4.2015.
+ * Created by Radovan Murin on 11.4.2015.
  */
 public class DeviceAdvertizer extends TimerTask {
     DatagramSocket socket;

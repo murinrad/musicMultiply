@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Rado on 24.5.2015.
+ * Created by Radovan Murin on 24.5.2015.
  */
 public class SettingsProvider {
 

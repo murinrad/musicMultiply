@@ -9,7 +9,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Rado on 26.4.2015.
+ * Created by Radovan Murin on 26.4.2015.
  */
 public class ResizableArrayBlockingQueue<E> implements BlockingQueue<E> {
     private static final int RESIZE_FACTOR = 2;

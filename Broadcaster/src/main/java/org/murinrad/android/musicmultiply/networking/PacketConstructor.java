@@ -3,6 +3,7 @@ package org.murinrad.android.musicmultiply.networking;
 import android.util.Log;
 
 import org.murinrad.android.musicmultiply.MainActivity;
+import org.murinrad.android.musicmultiply.decoder.MusicData;
 import org.murinrad.android.musicmultiply.decoder.events.MusicPlaybackEventDispatcher;
 import org.murinrad.android.musicmultiply.decoder.events.OnDataSentListener;
 import org.murinrad.android.musicmultiply.decoder.events.OnMusicPlaybackListener;
@@ -13,7 +14,7 @@ import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * Created by Rado on 3/29/2015.
+ * Created by Radovan Murin on 3/29/2015.
  */
 public class PacketConstructor implements OnDataSentListener, OnMusicPlaybackListener, Runnable {
     public static final int MTU_SIZE = 8192;
@@ -137,6 +138,11 @@ public class PacketConstructor implements OnDataSentListener, OnMusicPlaybackLis
     public void onStart() {
         generateNewID();
 
+    }
+
+    @Override
+    public void onMusicInfoChange(MusicData data) {
+        //We dont really care
     }
 
     public void generateNewID() {

@@ -11,7 +11,7 @@ import org.fourthline.cling.support.renderingcontrol.RenderingControlException;
 import org.murinrad.android.musicmultiply.MainActivity;
 
 /**
- * Created by Rado on 1.4.2015.
+ * Created by Radovan Murin on 1.4.2015.
  */
 public class RenderingControl extends AbstractAudioRenderingControl {
     @Override

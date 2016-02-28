@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by Rado on 7.6.2015.
+ * Created by Radovan Murin on 7.6.2015.
  */
 public class TimeKeeperDataLossAnalyzer {
 

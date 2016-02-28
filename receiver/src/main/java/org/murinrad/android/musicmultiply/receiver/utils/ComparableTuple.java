@@ -3,7 +3,7 @@ package org.murinrad.android.musicmultiply.receiver.utils;
 import org.murinrad.android.musicmultiply.org.murinrad.util.Tuple;
 
 /**
- * Created by Rado on 10.5.2015.
+ * Created by Radovan Murin on 10.5.2015.
  */
 public class ComparableTuple extends Tuple<Integer, byte[]> implements Comparable {
 

@@ -11,7 +11,7 @@ import org.fourthline.cling.support.model.ProtocolInfo;
 import org.fourthline.cling.support.model.ProtocolInfos;
 
 /**
- * Created by Rado on 6.4.2015.
+ * Created by Radovan Murin on 6.4.2015.
  */
 public class ConnectionManager extends ConnectionManagerService {
 

@@ -21,6 +21,7 @@ import org.fourthline.cling.support.model.TransportState;
 import org.fourthline.cling.support.model.TransportStatus;
 import org.murinrad.android.musicmultiply.MainActivity;
 import org.murinrad.android.musicmultiply.MusicMultiplyServerService;
+import org.murinrad.android.musicmultiply.decoder.MusicData;
 import org.murinrad.android.musicmultiply.decoder.events.MusicPlaybackEventDispatcher;
 import org.murinrad.android.musicmultiply.decoder.events.OnMusicPlaybackListener;
 
@@ -131,7 +132,7 @@ public class AVTransportService extends AbstractAVTransportService implements On
 
     @Override
     public void pause(@UpnpInputArgument(name = "InstanceID") UnsignedIntegerFourBytes instanceId) throws AVTransportException {
-        Log.i(MainActivity.APP_TAG, "pause");
+        Log.i(MainActivity.APP_TAG, "performPause");
         if (ctx.get() == null) return;
         Intent playIntent = new Intent(ctx.get(), MusicMultiplyServerService.class);
         playIntent.setAction(MusicMultiplyServerService.INTENT_PAUSE);
@@ -220,6 +221,11 @@ public class AVTransportService extends AbstractAVTransportService implements On
     @Override
     public void onStart() {
         currentStatus = new TransportInfo(TransportState.PLAYING);
+    }
+
+    @Override
+    public void onMusicInfoChange(MusicData data) {
+        //do nothing this is handeld by the receiver anyways
     }
 
     private TransportAction[] getTransportActionsPossible() {

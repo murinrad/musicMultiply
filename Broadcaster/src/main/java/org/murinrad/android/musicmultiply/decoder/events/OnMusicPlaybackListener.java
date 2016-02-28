@@ -1,7 +1,9 @@
 package org.murinrad.android.musicmultiply.decoder.events;
 
+import org.murinrad.android.musicmultiply.decoder.MusicData;
+
 /**
- * Created by Rado on 8.3.2015.
+ * Created by Radovan Murin on 8.3.2015.
  */
 public interface OnMusicPlaybackListener {
 
@@ -10,4 +12,8 @@ public interface OnMusicPlaybackListener {
     void onPause();
 
     void onStart();
+
+    void onMusicInfoChange(MusicData data);
+
+
 }

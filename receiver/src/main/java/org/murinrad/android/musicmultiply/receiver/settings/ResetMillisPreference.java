@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import org.murinrad.android.musicmultiply.IntEditTextPreference;
 
 /**
- * Created by Rado on 02.08.2015.
+ * Created by Radovan Murin on 02.08.2015.
  */
 public class ResetMillisPreference extends IntEditTextPreference {
     public ResetMillisPreference(Context context, AttributeSet attrs, int defStyleAttr) {

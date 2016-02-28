@@ -3,7 +3,7 @@ package org.murinrad.android.musicmultiply.org.murinrad.util;
 import android.os.Bundle;
 
 /**
- * Created by Rado on 21.6.2015.
+ * Created by Radovan Murin on 21.6.2015.
  */
 public abstract class GenericCallback {
 

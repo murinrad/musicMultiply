@@ -16,7 +16,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by Rado on 5.4.2015.
+ * Created by Radovan Murin on 5.4.2015.
  */
 public class DeviceAdvertListener extends IDeviceAdvertListener implements Runnable {
 

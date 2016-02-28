@@ -25,5 +25,6 @@
     <string name="starting_wifi">Activating Wifi hotspot</string>
     <string name="wifi_init_failure">Wifi failed to initialize, please connect your devices manualy</string>
     <string name="title_activity_player">Player</string>
+    <string name="no_more_previous">No more songs in list</string>
 
 </resources>

@@ -18,7 +18,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * Created by Rado on 26.4.2015.
+ * Created by Radovan Murin on 26.4.2015.
  */
 public class QoSController {
 

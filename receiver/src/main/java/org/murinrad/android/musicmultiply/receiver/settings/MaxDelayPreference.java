@@ -10,7 +10,7 @@ import org.murinrad.android.musicmultiply.IntEditTextPreference;
 import org.murinrad.android.musicmultiply.receiver.R;
 
 /**
- * Created by Rado on 25.5.2015.
+ * Created by Radovan Murin on 25.5.2015.
  */
 public class MaxDelayPreference extends IntEditTextPreference {
     public MaxDelayPreference(Context context, AttributeSet attrs, int defStyleAttr) {

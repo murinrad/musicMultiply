@@ -4,11 +4,12 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 
+import org.murinrad.android.musicmultiply.decoder.MusicData;
 import org.murinrad.android.musicmultiply.decoder.events.MusicPlaybackEventDispatcher;
 import org.murinrad.android.musicmultiply.decoder.events.OnMusicPlaybackListener;
 
 /**
- * Created by Rado on 12.4.2015.
+ * Created by Radovan Murin on 12.4.2015.
  */
 public class NotificationProvider extends org.murinrad.android.musicmultiply.NotificationProvider  implements OnMusicPlaybackListener {
 
@@ -46,6 +47,11 @@ public class NotificationProvider extends org.murinrad.android.musicmultiply.Not
     public void onStart() {
         notificationManager.notify(NOTIFICATION_ID, buildNotification("Playing"));
 
+    }
+
+    @Override
+    public void onMusicInfoChange(MusicData data) {
+        //unsuported yet
     }
 
     public Notification buildNotification(String text) {

@@ -15,7 +15,7 @@ import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 
 /**
- * Created by Rado on 26.4.2015.
+ * Created by Radovan Murin on 26.4.2015.
  */
 public class QosMessenger {
     String serverAddress;

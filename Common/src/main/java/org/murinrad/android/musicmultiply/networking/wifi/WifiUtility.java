@@ -17,7 +17,7 @@ import com.whitebyte.wifihotspotutils.WifiApManager;
 import org.murinrad.android.musicmultiply.org.murinrad.util.GenericCallback;
 
 /**
- * Created by Rado on 14.6.2015.
+ * Created by Radovan Murin on 14.6.2015.
  */
 public class WifiUtility {
 

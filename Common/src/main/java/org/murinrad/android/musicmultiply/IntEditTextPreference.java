@@ -6,7 +6,7 @@ import android.preference.Preference;
 import android.util.AttributeSet;
 
 /**
- * Created by Rado on 25.5.2015.
+ * Created by Radovan Murin on 25.5.2015.
  */
 public class IntEditTextPreference extends EditTextPreference {
 

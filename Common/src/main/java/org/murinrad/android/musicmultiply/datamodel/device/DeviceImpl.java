@@ -4,7 +4,7 @@ import java.io.InvalidClassException;
 import java.net.InetAddress;
 
 /**
- * Created by Rado on 6.4.2015.
+ * Created by Radovan Murin on 6.4.2015.
  */
 public class DeviceImpl implements IDevice {
 
