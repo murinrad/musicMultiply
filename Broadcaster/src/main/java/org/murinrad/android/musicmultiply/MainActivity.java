@@ -6,7 +6,9 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,18 +38,29 @@ public class MainActivity extends Activity {
     PlaybackListener playbackListener;
     String lastURI = null;
     TextView songName,songDuration;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
+        PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
         selectSongButton = (Button) findViewById(R.id.selectSong);
         closeButton = (Button) findViewById(R.id.closeButton);
         playButton = (ImageButton) findViewById(R.id.playButton);
         nextButton = (ImageButton) findViewById(R.id.nextBTN);
         prevButton = (ImageButton) findViewById(R.id.previousBTN);
         songName = (TextView) findViewById(R.id.songName);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu_main);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                return handleMenuPress(item);
+            }
+        });
+        toolbar.setTitle(getString(R.string.app_name));
 
         initializeButtonActions();
 
@@ -189,19 +202,31 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        return handleMenuPress(item);
+
+    }
+
+    private boolean handleMenuPress(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_device_manager) {
             Intent settingsStartIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsStartIntent);
+            return true;
+        }
+
+        if (id == R.id.action_settings) {
+            Intent settingsStartIntent = new Intent(this, sandbox.murinrad.org.sandbox.SettingsActivity.class);
             startActivity(settingsStartIntent);
             return true;
         }

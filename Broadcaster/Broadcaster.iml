@@ -71,6 +71,8 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dependency-cache" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jacoco" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaResources" />
@@ -86,9 +88,8 @@
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="appcompat-v7-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="seamless-util-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="jetty-jndi-8.1.16.v20140903" level="project" />
     <orderEntry type="library" exported="" name="commons-net-3.3-sources" level="project" />
@@ -107,15 +108,17 @@
     <orderEntry type="library" exported="" name="seamless-http-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="mina-core-2.0.9" level="project" />
     <orderEntry type="library" exported="" name="jetty-util-8.1.16.v20140903" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="apacheds-core-api-2.0.0-M19" level="project" />
     <orderEntry type="library" exported="" name="seamless-xml-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="jetty-jmx-8.1.16.v20140903" level="project" />
     <orderEntry type="library" exported="" name="mina-statemachine-2.0.9" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="jetty-xml-8.1.16.v20140903" level="project" />
     <orderEntry type="library" exported="" name="mina-http-2.0.9" level="project" />
     <orderEntry type="library" exported="" name="jetty-policy-8.1.16.v20140903" level="project" />
     <orderEntry type="library" exported="" name="commons-net-3.3" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.1.1" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="jetty-http-8.1.16.v20140903" level="project" />
     <orderEntry type="library" exported="" name="jetty-servlets-8.1.16.v20140903" level="project" />
     <orderEntry type="library" exported="" name="jetty-rewrite-8.1.16.v20140903" level="project" />
@@ -124,7 +127,6 @@
     <orderEntry type="library" exported="" name="mina-integration-beans-2.0.9" level="project" />
     <orderEntry type="library" exported="" name="servlet-api-3.0" level="project" />
     <orderEntry type="library" exported="" name="cling-support-2.0.1" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="mina-integration-jmx-2.0.9" level="project" />
     <orderEntry type="library" exported="" name="jetty-webapp-8.1.16.v20140903" level="project" />
     <orderEntry type="library" exported="" name="jetty-io-8.1.16.v20140903" level="project" />

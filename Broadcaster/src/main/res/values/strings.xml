@@ -4,6 +4,7 @@
     <string name="app_name">Sandbox</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_device_manager">Manage devices</string>
     <string name="close_service">Close service</string>
     <string name="app_text">The streaming service is now running.</string>
     <string name="accept_device">Yes, stream to this device</string>

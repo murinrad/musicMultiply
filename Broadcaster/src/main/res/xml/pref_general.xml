@@ -1,0 +1,9 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="enable_upnp"
+        android:title="Enable UPnP control"
+        android:summary="Enables the remote control of streaming via an external UPnP application"
+        android:defaultValue="false" />
+
+</PreferenceScreen>

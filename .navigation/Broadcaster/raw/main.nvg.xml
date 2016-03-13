@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "sandbox.murinrad.org.sandbox.Player"/>
+      <point      
+        x = "1452"      
+        y = "84"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "org.murinrad.android.musicmultiply.MainActivity"/>
+      <point      
+        x = "-224"      
+        y = "176"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "org.murinrad.android.musicmultiply.SettingsActivity"/>
+      <point      
+        x = "1444"      
+        y = "20"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "sandbox.murinrad.org.sandbox.SettingsActivity"/>
+      <point      
+        x = "272"      
+        y = "284"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

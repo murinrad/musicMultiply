@@ -4,11 +4,13 @@ import android.app.Service;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.media.MediaMetadata;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -109,6 +111,7 @@ public class MusicMultiplyServerService extends Service {
     };
 
     private Queue<String> pastSongs = new LinkedList<>();
+    private SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -210,8 +213,7 @@ public class MusicMultiplyServerService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.i(MainActivity.APP_TAG, "MusicMultiplyServer service is starting up...");
-        Intent upnpStartIntent = new Intent(this, AndroidUpnpServiceImpl.class);
-        bindService(upnpStartIntent, upnpServiceConnection, BIND_AUTO_CREATE);
+        startUPNPService();
         Intent timeKeeperStartIntent = new Intent(this, TimeKeeperServerService.class);
         bindService(timeKeeperStartIntent, timeKeeperSC, BIND_AUTO_CREATE);
         try {
@@ -231,6 +233,20 @@ public class MusicMultiplyServerService extends Service {
 
         notificationProvider = new NotificationProvider(this);
         startForeground(notificationProvider.NOTIFICATION_ID, notificationProvider.buildNotification("Running..."));
+        preferenceChangeListener = new OnPreferenceChangeListener();
+        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(preferenceChangeListener);
+    }
+
+
+    private void startUPNPService() {
+        Intent upnpStartIntent = new Intent(this, AndroidUpnpServiceImpl.class);
+        bindService(upnpStartIntent, upnpServiceConnection, BIND_AUTO_CREATE);
+    }
+
+    private void stopUPNPService() {
+       if(upnpServiceConnection!=null) {
+           unbindService(upnpServiceConnection);
+       }
     }
 
     public void initializeUPNP() throws IOException, ValidationException {
@@ -243,8 +259,11 @@ public class MusicMultiplyServerService extends Service {
         super.onDestroy();
         stop();
         stopServices();
+
         notificationProvider.dismissNotification();
         Log.i(MainActivity.APP_TAG, "onDestroy called");
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(preferenceChangeListener);
+        preferenceChangeListener = null;
     }
 
     private void stopServices() {
@@ -290,6 +309,25 @@ public class MusicMultiplyServerService extends Service {
 
 
         return retVal;
+    }
+
+    private class OnPreferenceChangeListener implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            switch (key) {
+                case sandbox.murinrad.org.sandbox.SettingsActivity.PREF_KEY_UPNP_ENABLE:
+                    boolean value = sharedPreferences.getBoolean(key,false);
+                    if(value) {
+                        Toast.makeText(MusicMultiplyServerService.this,"Starting UPNP service",Toast.LENGTH_LONG).show();
+                        startUPNPService();
+                    } else {
+                        Toast.makeText(MusicMultiplyServerService.this,"Stopping UPNP service",Toast.LENGTH_LONG).show();
+                        stopUPNPService();
+                    }
+                    break;
+            }
+        }
     }
 
 
